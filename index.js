@@ -2,13 +2,14 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateTemplate = require('./src/generateTemplate.js');
 
+// List of questions to ask user
 const questions = [
   {
 
   }
 ];
 
-// TODO: Create a function to initialize app
+// Function to initialize app
 function init() {
   inquirer
     .prompt(questions)
