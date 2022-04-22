@@ -1,4 +1,6 @@
 
+
+// Function to build HTML file using user input
 function generateTemplate(data) {
 return `<!DOCTYPE html>
 <html lang="en">
@@ -12,10 +14,7 @@ return `<!DOCTYPE html>
   
 </body>
 </html>
-`
+`;
 }
-
-
-
 
 module.exports = generateTemplate;
