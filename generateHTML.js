@@ -1,7 +1,42 @@
+function createCards(team) {
+  const cardArray = [];
+  // Add Manager card html to rendering html text
+  cardArray.push(...team.filter((employee) => {
+    return employee.getRole() === "Manager";
+  }).map((manager) => {
+    return managerCard(manager);
+  }));
+  // Add Engineer card(s) html to rendering html text
+  cardArray.push(...team.filter((employee) => {
+    return employee.getRole() === "Engineer";
+  }).map((engineer) => {
+    return engineerCard(engineer);
+  }));
+  // Add Intern card(s) html to rendering html text
+  cardArray.push(...team.filter((employee) => {
+    return employee.getRole() === "Intern";
+  }).map((intern) => {
+    return internCard(intern);
+  }));
+
+  // Add spacing elements to array of cards
+  const finalArray = addSpace(cardArray);
+  return generateFinalHTML(finalArray) 
+}
+
+function addSpace(array) {
+  if (array.length > 3 ) {
+    for (let i = 3; i < array.length; i += 4 ) {
+      array.splice(i,0,`<div class="w-100"></div>`)
+    }
+  }
+  return array
+}
+
 // Create Manager card to be appended to the HTML
 function managerCard(manager) {
   return `
-<div class="card col-3">
+<div class = "card col-3 text-center my-3">
   <div class="card-title">
       <h2>${manager.getName()}</h2>
       <h3><i class="fas fa-crown"></i> ${manager.getRole()}</h3>
@@ -10,7 +45,7 @@ function managerCard(manager) {
       <ul class="list-group">
           <li class="list-group-item">ID: ${manager.getId()}</li>
           <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
-          <li class="list-group-item">Office number: <a href="tel:${manager.officeNumber}">${manager.officeNumber}</a></li>
+          <li class="list-group-item">Office number: ${manager.officeNumber}</li>
       </ul>
   </div>
 </div>`;
@@ -19,7 +54,7 @@ function managerCard(manager) {
 // Create Engineer card to be appended to the HTML
 function engineerCard(engineer) {
   return `
-<div class="card col-3">
+<div class = "card col-3 text-center my-3">
   <div class="card-title">
       <h2>${engineer.getName()}</h2>
       <h3><i class="fas fa-crown"></i> ${engineer.getRole()}</h3>
@@ -37,7 +72,7 @@ function engineerCard(engineer) {
 // Create Intern card to be appended to the HTML
 function internCard(intern) {
   return `
-<div class="card col-3">
+<div class = "card col-3 text-center my-3">
   <div class="card-title">
       <h2>${intern.getName()}</h2>
       <h3><i class="fas fa-crown"></i> ${intern.getRole()}</h3>
@@ -53,8 +88,8 @@ function internCard(intern) {
 }
 
 // Function to build HTML file using user input
-function generateTemplate(data) {
-return `<!DOCTYPE html>
+function generateFinalHTML(cards) {
+  return `<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -75,6 +110,7 @@ return `<!DOCTYPE html>
   <main>
     <div class='justify-content-center card-deck'>
       <!-- Where employee cards will populate -->
+      ${cards}
     </div>
   </main>
   <script src="https://kit.fontawesome.com/0e1a0a5b63.js" crossorigin="anonymous"></script>
@@ -84,4 +120,4 @@ return `<!DOCTYPE html>
 `;
 }
 
-module.exports = generateTemplate;
+module.exports = createCards;

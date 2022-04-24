@@ -65,7 +65,7 @@ const employeeQuestions = [
   },
   {
     type: "input",
-    message: "Please enter the Employee's Github usernam:",
+    message: "Please enter the Employee's Github username:",
     name: "employeeGithub",
     when: (answer) => answer.employeeType === "Engineer"
   },
@@ -107,7 +107,6 @@ function checkFinished() {
     .prompt(continueOption)
     .then((response => {
       if (response.continueOption === "I'm Finished") {
-        renderCSS(generateCSS());
         renderHTML(generateHTML(teamMembers));
       } else {
         addEmployees();
@@ -115,7 +114,7 @@ function checkFinished() {
     }));
 }
 
-// Adds employees one by one until Finished is chosen, then it writes the CSS and HTML files
+// Adds employees one by one until Finished is chosen, then it writes HTML file
 function addEmployees() {
   inquirer
     .prompt(employeeQuestions)
