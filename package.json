@@ -21,9 +21,7 @@
   },
   "homepage": "https://github.com/ssiegelman15/Team-Portfolio-Generator#readme",
   "dependencies": {
-    "inquirer": "^8.2.2"
-  },
-  "devDependencies": {
+    "inquirer": "^8.2.2",
     "jest": "^27.5.1"
   }
 }
