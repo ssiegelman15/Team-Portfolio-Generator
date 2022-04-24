@@ -16,4 +16,11 @@ describe('Initialization', () => {
     // Verify that new object has correct properties
     expect(manager.officeNumber).toEqual(15);
   })
+
+  it("getRole function should now return 'Manager' instead of 'Employee'", () => {
+    const manager = new Manager('Shlomo', 'ssiegelman', 'ssiegelman15@gmail.com', 15);
+
+    // Verify that getRole function returns 'Manager'
+    expect(manager.getRole()).toEqual('Manager')
+  })
 })

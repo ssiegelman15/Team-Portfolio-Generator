@@ -22,7 +22,7 @@ describe('Initialization', () => {
   it("getRole should return 'Employee'", () => {
     const employee = new Employee('Shlomo', 'ssiegelman', 'ssiegelman15@gmail.com');
 
-    // Verify that class functions return constructor inputs when called
+    // Verify that getRole function returns 'Employee'
     expect(employee.getRole()).toEqual('Employee');
   })
 });
