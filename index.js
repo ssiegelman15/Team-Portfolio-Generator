@@ -1,10 +1,12 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateHTML = require('./generateHTML.js');
+const generateHTML = require('./generateHTML');
+const generateCSS = require('./generateHTML');
 const Engineer = require('./lib/engineer');
 const Manager = require('./lib/manager');
 const Intern = require('./lib/intern');
 
+// Empty array to be populated by each added employee
 teamMembers = []
 
 // List of questions to ask user
@@ -67,33 +69,39 @@ const employeeQuestions = [
   },
 ];
 
+// Create manager using inputs and add it to team member array
 function createManager(data) {
   const manager = new Manager(data.managerName, data.managerID, data.managerEmail, data.managerOffice);
   teamMembers.push(manager);
 }
 
+// Create engineer using inputs and add it to team member array
 function createEngineer(data) {
   const engineer = new Engineer(data.employeeName, data.employeeID, data.employeeEmail, data.employeeGithub);
   teamMembers.push(engineer);
 }
 
+// Create intern using inputs and add it to team member array
 function createIntern(data) {
   const intern = new Intern(data.employeeName, data.employeeID, data.employeeEmail, data.employeeSchool);
   teamMembers.push(intern);
 }
 
+// Generate HTML file
 function renderHTML(html) {
   fs.writeFile('./dist/index.html', html, (err) => {
       err ? console.error(err) : console.log("HTML has been generated!")
   })
 }
 
+// Generate CSS file
 function renderCSS(css) {
   fs.writeFile('./dist/style.css', css, (err) => {
       err ? console.error(err) : console.log("CSS has been generated!")
   })
 }
 
+// Adds employees one by one until Finished is chosen, then it writes the CSS and HTML files
 function addEmployees() {
   inquirer
     .prompt(employeeQuestions)
