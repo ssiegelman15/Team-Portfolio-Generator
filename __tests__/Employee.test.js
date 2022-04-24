@@ -9,4 +9,13 @@ describe('Initialization', () => {
     expect(employee.id).toEqual("ssiegelman");
     expect(employee.email).toEqual("ssiegelman15@gmail.com");
   })
+
+  it("Functions should return constructor inputs", () => {
+    const employee = new Employee('Shlomo', 'ssiegelman', 'ssiegelman15@gmail.com');
+
+    // Verify that class functions return constructor inputs when called
+    expect(employee.getName()).toEqual(employee.name);
+    expect(employee.getId()).toEqual(employee.id);
+    expect(employee.getEmail()).toEqual(employee.email);
+  })
 });
