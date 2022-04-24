@@ -22,7 +22,7 @@ Application takes a series of user inputs regarding information on their team me
 
 ## Installation
 
-Please run the following commands in your terminal to insall each dependency required for this application to run correctly: npm i jest, npm i fs, npm i inquirer, and npm i email-validator.
+Please run the following commands in your terminal to install each dependency required for this application to run correctly: npm i jest, npm i fs, npm i inquirer, and npm i email-validator.
 
 ## Usage
 
