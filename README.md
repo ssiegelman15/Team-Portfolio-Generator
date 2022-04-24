@@ -4,6 +4,7 @@
 
   ## Table of Contents
 - [Description](#description)
+- [Video Walkthrough](#Video Walkthrough)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -14,6 +15,10 @@
 ## Description
 
 Application takes a series of user inputs regarding information on their team members and creates an HTML page that represent a portfolio of the user's team.
+
+## Video Walkthrough
+
+
 
 ## Installation
 
