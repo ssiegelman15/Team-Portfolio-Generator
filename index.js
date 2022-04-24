@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const emailValidator = require('email-validator');
 const fs = require('fs');
 const generateHTML = require('./generateHTML');
 const Engineer = require('./lib/engineer');
@@ -7,6 +8,14 @@ const Intern = require('./lib/intern');
 
 // Empty array to be populated by each added employee
 teamMembers = []
+
+// Creating validation that input string isn't empty
+const nonEmptyValidation = async (input) => {
+  if (input === '') {
+    return 'Please type something before hitting enter.';
+  }
+  return true;
+};
 
 // List of questions to ask user
 const managerQuestions = [
