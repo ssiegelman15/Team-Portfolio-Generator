@@ -30,8 +30,8 @@ const questions = [
   {
     type: "list",
     message: "Choose the role of the team member:",
-    choices: ["Intern", "Engineer"],
-    name: "employee",
+    choices: ["Intern", "Engineer", "Finished"],
+    name: "addEmployee",
   }
 ];
 
