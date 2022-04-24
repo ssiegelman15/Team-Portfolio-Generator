@@ -36,8 +36,8 @@ function addSpace(array) {
 // Create Manager card to be appended to the HTML
 function managerCard(manager) {
   return `
-<div class = "card col-3 text-center my-3">
-  <div class="card-title">
+<div class="card col-3 bg-info text-center my-3">
+  <div class="card-title text-white">
       <h2>${manager.getName()}</h2>
       <h3><i class="fas fa-crown"></i> ${manager.getRole()}</h3>
   </div>
@@ -54,8 +54,8 @@ function managerCard(manager) {
 // Create Engineer card to be appended to the HTML
 function engineerCard(engineer) {
   return `
-<div class = "card col-3 text-center my-3">
-  <div class="card-title">
+<div class="card col-3 bg-info text-center my-3">
+  <div class="card-title text-white">
       <h2>${engineer.getName()}</h2>
       <h3><i class="fas fa-desktop"></i> ${engineer.getRole()}</h3>
   </div>
@@ -72,8 +72,8 @@ function engineerCard(engineer) {
 // Create Intern card to be appended to the HTML
 function internCard(intern) {
   return `
-<div class = "card col-3 text-center my-3">
-  <div class="card-title">
+<div class="card col-3 bg-info text-center my-3">
+  <div class="card-title text-white">
       <h2>${intern.getName()}</h2>
       <h3><i class="fas fa-user-graduate"></i> ${intern.getRole()}</h3>
   </div>
@@ -103,7 +103,7 @@ function generateFinalHTML(cards) {
 </head>
 
 <body>
-  <header class="bg-info text-white text-center">
+  <header class="bg-danger text-white text-center">
     <h1 class="p-5">My Team</h1>
   </header>
 
