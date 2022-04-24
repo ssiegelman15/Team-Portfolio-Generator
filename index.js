@@ -84,7 +84,7 @@ const employeeQuestions = [
     type: "input",
     message: "Please enter the Employee's email:",
     name: "employeeEmail",
-    validate: emailValidator,
+    validate: validateEmail,
   },
   {
     type: "input",
