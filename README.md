@@ -18,7 +18,7 @@ Application takes a series of user inputs regarding information on their team me
 
 ## Video Walkthrough
 
-
+![Walkthrough](./assets/Video_Walkthrough.gif)
 
 ## Installation
 
