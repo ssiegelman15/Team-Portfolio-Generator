@@ -14,7 +14,7 @@
 
 ## Description
 
-Application takes a series of user inputs regarding information on their team members and creates an HTML page that represent a portfolio of the user's team.
+Application takes a series of user inputs regarding information about their team members and creates an HTML page that represent a portfolio of the user's team.
 
 ## Video Walkthrough
 
