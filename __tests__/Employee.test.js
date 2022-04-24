@@ -18,4 +18,11 @@ describe('Initialization', () => {
     expect(employee.getId()).toEqual(employee.id);
     expect(employee.getEmail()).toEqual(employee.email);
   })
+
+  it("getRole should return 'Employee'", () => {
+    const employee = new Employee('Shlomo', 'ssiegelman', 'ssiegelman15@gmail.com');
+
+    // Verify that class functions return constructor inputs when called
+    expect(employee.getRole()).toEqual('Employee');
+  })
 });
