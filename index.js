@@ -23,21 +23,25 @@ const managerQuestions = [
     type: "input",
     message: "Please enter the Manager's name:",
     name: "managerName",
+    validate: nonEmptyValidation,
   },
   {
     type: "input",
     message: "Please enter the Manager's employee ID:",
     name: "managerID",
+    validate: nonEmptyValidation,
   },
   {
     type: "input",
     message: "Please enter the Manager's email:",
     name: "managerEmail",
+    validate: emailValidator,
   },
   {
     type: "input",
     message: "Please enter the Manager's office number:",
     name: "managerOffice",
+    validate: nonEmptyValidation,
   }
 ];
 
@@ -61,27 +65,32 @@ const employeeQuestions = [
     type: "input",
     message: "Please enter the Employee's name:",
     name: "employeeName",
+    validate: nonEmptyValidation,
   },
   {
     type: "input",
     message: "Please enter the Employee's employee ID:",
     name: "employeeID",
+    validate: nonEmptyValidation,
   },
   {
     type: "input",
     message: "Please enter the Employee's email:",
     name: "employeeEmail",
+    validate: emailValidator,
   },
   {
     type: "input",
     message: "Please enter the Employee's Github username:",
     name: "employeeGithub",
+    validate: nonEmptyValidation,
     when: (answer) => answer.employeeType === "Engineer"
   },
   {
     type: "input",
     message: "Please enter the Employee's School:",
     name: "employeeSchool",
+    validate: nonEmptyValidation,
     when: (answer) => answer.employeeType === "Intern"
   },
 ];
