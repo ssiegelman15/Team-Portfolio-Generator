@@ -57,7 +57,7 @@ function engineerCard(engineer) {
 <div class = "card col-3 text-center my-3">
   <div class="card-title">
       <h2>${engineer.getName()}</h2>
-      <h3><i class="fas fa-crown"></i> ${engineer.getRole()}</h3>
+      <h3><i class="fas fa-desktop"></i> ${engineer.getRole()}</h3>
   </div>
   <div class="card-body">
       <ul class="list-group">
@@ -75,7 +75,7 @@ function internCard(intern) {
 <div class = "card col-3 text-center my-3">
   <div class="card-title">
       <h2>${intern.getName()}</h2>
-      <h3><i class="fas fa-crown"></i> ${intern.getRole()}</h3>
+      <h3><i class="fas fa-user-graduate"></i> ${intern.getRole()}</h3>
   </div>
   <div class="card-body">
       <ul class="list-group">
