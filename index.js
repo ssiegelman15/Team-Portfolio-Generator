@@ -33,12 +33,21 @@ const managerQuestions = [
   }
 ];
 
+const continueOption = [
+  {
+    type: "list",
+    message: "What would you like to do?",
+    choices: ["Add Another Employee", "I'm Finished"],
+    name: "continueOption",
+  }
+]
+
 const employeeQuestions = [
   {
     type: "list",
-    message: "Choose the role of the team member:",
-    choices: ["Intern", "Engineer", "Finished"],
-    name: "addEmployee",
+    message: "Please choose role of next employee:",
+    choices: ["Engineer", "Intern"],
+    name: "employeeType",
   },
   {
     type: "input",
@@ -59,13 +68,13 @@ const employeeQuestions = [
     type: "input",
     message: "Please enter the Employee's Github usernam:",
     name: "employeeGithub",
-    when: (answer) => answer.addEmployee === "Engineer"
+    when: (answer) => answer.employeeType === "Engineer"
   },
   {
     type: "input",
     message: "Please enter the Employee's School:",
     name: "employeeSchool",
-    when: (answer) => answer.addEmployee === "Intern"
+    when: (answer) => answer.employeeType === "Intern"
   },
 ];
 
@@ -90,15 +99,28 @@ function createIntern(data) {
 // Generate HTML file
 function renderHTML(html) {
   fs.writeFile('./dist/index.html', html, (err) => {
-      err ? console.error(err) : console.log("HTML has been generated!")
+    err ? console.error(err) : console.log("HTML has been generated!")
   })
 }
 
 // Generate CSS file
 function renderCSS(css) {
   fs.writeFile('./dist/style.css', css, (err) => {
-      err ? console.error(err) : console.log("CSS has been generated!")
+    err ? console.error(err) : console.log("CSS has been generated!")
   })
+}
+
+function checkFinished() {
+  inquirer
+    .prompt(continueOption)
+    .then((response => {
+      if (response.continueOption === "I'm Finished") {
+        renderCSS(generateCSS());
+        renderHTML(generateHTML(teamMembers));
+      } else {
+        addEmployees();
+      }
+    }));
 }
 
 // Adds employees one by one until Finished is chosen, then it writes the CSS and HTML files
@@ -106,16 +128,13 @@ function addEmployees() {
   inquirer
     .prompt(employeeQuestions)
     .then((response => {
-      if (response.addEmployee === "Engineer") {
+      if (response.employeeType === "Engineer") {
         createEngineer(response);
-        addEmployees();
-    }   else if (response.addEmployee === "Intern") {
+        checkFinished();
+      } else if (response.employeeType === "Intern") {
         createIntern(response);
-        addEmployees();
-    } else {
-      renderCSS(generateCSS());
-      renderHTML(generateHTML(teamMembers));
-    }
+        checkFinished();
+      }
     }));
 }
 
@@ -125,7 +144,7 @@ function init() {
     .prompt(managerQuestions)
     .then((response => {
       createManager(response);
-      addEmployees();
+      checkFinished();
     }));
 }
 
