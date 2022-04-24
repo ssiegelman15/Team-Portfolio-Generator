@@ -55,13 +55,13 @@ const employeeQuestions =[
     type: "input",
     message: "Please enter the Employee's Github usernam:",
     name: "employeeGithub",
-    when: (answer) => answer.employee === "Engineer"
+    when: (answer) => answer.addEmployee === "Engineer"
   },
   {
     type: "input",
     message: "Please enter the Employee's School:",
     name: "employeeSchool",
-    when: (answer) => answer.employee === "Intern"
+    when: (answer) => answer.addEmployee === "Intern"
   },
 ];
 
