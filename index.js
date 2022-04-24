@@ -6,7 +6,7 @@ const Manager = require('./lib/manager');
 const Intern = require('./lib/intern');
 
 // List of questions to ask user
-const questions = [
+const managerQuestions = [
   {
     type: "input",
     message: "Please enter the Manager's name:",
@@ -26,13 +26,41 @@ const questions = [
     type: "input",
     message: "Please enter the Manager's office number:",
     name: "managerOffice",
-  },
+  }
+];
+
+const employeeQuestions =[
   {
     type: "list",
     message: "Choose the role of the team member:",
     choices: ["Intern", "Engineer", "Finished"],
     name: "addEmployee",
-  }
+  },
+  {
+    type: "input",
+    message: "Please enter the Employee's name:",
+    name: "employeeName",
+  },
+  {
+    type: "input",
+    message: "Please enter the Employee's employee ID:",
+    name: "employeeID",
+  },
+  {
+    type: "input",
+    message: "Please enter the Employee's email:",
+    name: "employeeEmail",
+  },
+  {
+    type: "input",
+    message: "Please enter the Employee's Github usernam:",
+    name: "employeeGithub",
+  },
+  {
+    type: "input",
+    message: "Please enter the Employee's School:",
+    name: "employeeSchool",
+  },
 ];
 
 // Function to initialize app
