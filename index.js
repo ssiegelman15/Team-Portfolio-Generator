@@ -8,7 +8,30 @@ const Intern = require('./lib/intern');
 // List of questions to ask user
 const questions = [
   {
-
+    type: "input",
+    message: "Please enter the Manager's name:",
+    name: "managerName",
+  },
+  {
+    type: "input",
+    message: "Please enter the Manager's employee ID:",
+    name: "managerID",
+  },
+  {
+    type: "input",
+    message: "Please enter the Manager's email:",
+    name: "managerEmail",
+  },
+  {
+    type: "input",
+    message: "Please enter the Manager's office number:",
+    name: "managerOffice",
+  },
+  {
+    type: "list",
+    message: "Choose the role of the team member:",
+    choices: ["Intern", "Engineer"],
+    name: "employee",
   }
 ];
 
