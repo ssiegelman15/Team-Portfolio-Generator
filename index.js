@@ -17,6 +17,13 @@ const nonEmptyValidation = async (input) => {
   return true;
 };
 
+const validateEmail = async (input) => {
+  if (emailValidator.validate(input)) {
+    return true
+  };
+  return "Please type in a valid email address."
+};
+
 // List of questions to ask user
 const managerQuestions = [
   {
@@ -35,7 +42,7 @@ const managerQuestions = [
     type: "input",
     message: "Please enter the Manager's email:",
     name: "managerEmail",
-    validate: emailValidator,
+    validate: validateEmail,
   },
   {
     type: "input",
