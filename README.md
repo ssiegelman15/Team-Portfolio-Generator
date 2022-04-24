@@ -4,7 +4,7 @@
 
   ## Table of Contents
 - [Description](#description)
-- [Video Walkthrough](#Video Walkthrough)
+- [Video Walkthrough](#Video-Walkthrough)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
