@@ -68,7 +68,10 @@ const employeeQuestions =[
 // Function to initialize app
 function init() {
   inquirer
-    .prompt(questions)
+    .prompt(managerQuestions)
+    .prompt(employeeQuestions)
+    // Need to change input now that I've added complexity to the questions, perhaps write a function that gets called after each prompt
+    // to store the data and then use that storage variable to write the html file
     .then((input) => {
       writeToFile('GenerateTeamPortfolio.html', generateTemplate(input))
     })
