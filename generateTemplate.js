@@ -1,5 +1,3 @@
-
-
 // Function to build HTML file using user input
 function generateTemplate(data) {
 return `<!DOCTYPE html>

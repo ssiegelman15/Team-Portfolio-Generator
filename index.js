@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateTemplate = require('./src/generateTemplate.js');
+const generateTemplate = require('./generateTemplate.js');
 
 // List of questions to ask user
 const questions = [
