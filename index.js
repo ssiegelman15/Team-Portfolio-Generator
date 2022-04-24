@@ -1,7 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateHTML = require('./generateHTML');
-const generateCSS = require('./generateHTML');
 const Engineer = require('./lib/engineer');
 const Manager = require('./lib/manager');
 const Intern = require('./lib/intern');
@@ -100,13 +99,6 @@ function createIntern(data) {
 function renderHTML(html) {
   fs.writeFile('./dist/index.html', html, (err) => {
     err ? console.error(err) : console.log("HTML has been generated!")
-  })
-}
-
-// Generate CSS file
-function renderCSS(css) {
-  fs.writeFile('./dist/style.css', css, (err) => {
-    err ? console.error(err) : console.log("CSS has been generated!")
   })
 }
 
