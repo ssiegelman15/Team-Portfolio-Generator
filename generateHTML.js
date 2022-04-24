@@ -1,5 +1,5 @@
 // Create Manager card to be appended to the HTML
-function renderManager(manager) {
+function managerCard(manager) {
   return `
 <div class="card col-3">
   <div class="card-title">
@@ -11,6 +11,42 @@ function renderManager(manager) {
           <li class="list-group-item">ID: ${manager.getId()}</li>
           <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
           <li class="list-group-item">Office number: <a href="tel:${manager.officeNumber}">${manager.officeNumber}</a></li>
+      </ul>
+  </div>
+</div>`;
+}
+
+// Create Engineer card to be appended to the HTML
+function engineerCard(engineer) {
+  return `
+<div class="card col-3">
+  <div class="card-title">
+      <h2>${engineer.getName()}</h2>
+      <h3><i class="fas fa-crown"></i> ${engineer.getRole()}</h3>
+  </div>
+  <div class="card-body">
+      <ul class="list-group">
+          <li class="list-group-item">ID: ${engineer.getId()}</li>
+          <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+          <li class="list-group-item">Github Profile: <a href="https://github.com/${engineer.getGithub()}" target="_blank">${engineer.getGithub()}</a></li>
+      </ul>
+  </div>
+</div>`;
+}
+
+// Create Intern card to be appended to the HTML
+function internCard(intern) {
+  return `
+<div class="card col-3">
+  <div class="card-title">
+      <h2>${intern.getName()}</h2>
+      <h3><i class="fas fa-crown"></i> ${intern.getRole()}</h3>
+  </div>
+  <div class="card-body">
+      <ul class="list-group">
+          <li class="list-group-item">ID: ${intern.getId()}</li>
+          <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
+          <li class="list-group-item">Current School: ${intern.school}</li>
       </ul>
   </div>
 </div>`;
