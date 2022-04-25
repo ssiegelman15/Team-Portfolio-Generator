@@ -122,7 +122,7 @@ function createIntern(data) {
 
 // Generate HTML file
 function renderHTML(html) {
-  fs.writeFile('./dist/index.html', html, (err) => {
+  fs.writeFile('./dist/generatedIndex.html', html, (err) => {
     err ? console.error(err) : console.log("HTML has been generated!")
   })
 }
