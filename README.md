@@ -4,6 +4,7 @@
 
   ## Table of Contents
 - [Description](#description)
+- [Video Walkthrough](#Video-Walkthrough)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -13,11 +14,15 @@
 
 ## Description
 
-Application takes a series of user inputs regarding information on their team members and creates an HTML page that represent a portfolio of the user's team.
+Application takes a series of user inputs regarding information about their team members and creates an HTML page that represent a portfolio of the user's team.
+
+## Video Walkthrough
+
+![Walkthrough](./assets/Video_Walkthrough.gif)
 
 ## Installation
 
-Please run the following commands in your terminal to insall each dependency required for this application to run correctly: npm i jest, npm i fs, npm i inquirer, and npm i email-validator.
+After initializing your node by running npm init -y in your terminal, please run the following commands in your terminal to install each dependency required for this application to run correctly: npm i jest, npm i fs, npm i inquirer, and npm i email-validator.
 
 ## Usage
 
