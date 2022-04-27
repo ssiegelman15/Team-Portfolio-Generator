@@ -10,14 +10,14 @@ const Intern = require('./lib/intern');
 teamMembers = []
 
 // Creating validation that input string isn't empty
-const nonEmptyValidation = (input) => {
+const nonEmptyValidation = async (input) => {
   if (input === '') {
     return 'Please type something before hitting enter.';
   }
   return true;
 };
 
-const validateEmail = (input) => {
+const validateEmail = async (input) => {
   if (emailValidator.validate(input)) {
     return true
   };
