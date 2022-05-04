@@ -1,4 +1,4 @@
-const Intern = require('../lib/intern');
+const Intern = require('../lib/Intern');
 
 describe('Initialization', () => {
   it("Should create object with name, id, email & school if provided", () => {

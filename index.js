@@ -2,9 +2,9 @@ const inquirer = require('inquirer');
 const emailValidator = require('email-validator');
 const fs = require('fs');
 const generateHTML = require('./generateHTML');
-const Engineer = require('./lib/engineer');
-const Manager = require('./lib/manager');
-const Intern = require('./lib/intern');
+const Engineer = require('./lib/Engineer');
+const Manager = require('./lib/Manager');
+const Intern = require('./lib/Intern');
 
 // Empty array to be populated by each added employee
 teamMembers = []
